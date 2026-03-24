@@ -1,0 +1,65 @@
+---
+title: "STATS 101A HW1"
+author: "Prisha Chowdhury"
+date: "2026-01-06"
+output: html_document
+---
+#problem 1 
+1. D. Strong positive linear Relation
+2. slope = 8870.89
+ as you have one more year of experience increasing it is going to increase by avg 
+3. B) 86% of the total variability in salary is explained by the model.
+4. C 
+5. 
+Q3.(0.93^2)
+C 
+
+Q4) y- y hat = residual plot , C: no problem 
+
+Q5) Outside of the range of my data point 
+b = y bar- a(x) plug in 
+101904.47
+
+##problem 2 
+1)
+
+$$H_0:\mu = 2.5  \\ H1:\mu > 2.5 $$
+2)$$T=\frac{2.9 - 2.5 }{\frac{1.2} }= 2.357$$
+```{r}
+1- pt(2.357,df = 49 )
+```
+3) p value = 0.01123
+4) rejecting the null, there is sufficient evidence, more than 2.5 hours 
+5) 
+
+```{r}
+qt ( 0.975, df = 49 )
+```
+$$2.9\pm2.01$$
+```{r}
+```
+
+11:36am 
+its between thes bounds, 95% confident that this is true 
+
+##problem 3 
+download the heart.csv 
+```{r}
+heart <-read.csv("Heart.csv")
+model <- lm(MaxHR ~ Age ,data = heart)
+summary(model)
+```
+$$\hat{MaxHR} = -0.9966 * Age + 203.8634$$
+average 
+
+```{r}
+plot(MaxHR ~ Age ,data = heart)
+abline(model, col = "red")
+```
+
+3)R square:  0.1552, total variability, not that good 
+plot residual 
+```{r}
+plot(model$residuals~heart$Age)
+```
+
